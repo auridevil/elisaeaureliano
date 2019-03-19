@@ -1,21 +1,45 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { Fragment } from 'react'
+import { Link } from 'gatsby'
+import ReactPageScroller from 'react-page-scroller'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import Image from '../components/image'
+import Section from '../components/section'
+import { GlobalStyle } from '../styles/main-styles'
+// import SEO from '../components/seo'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+import { orangered, black, white, grey } from '../data/colors.yaml'
+import topo from '../images/topo.svg'
+
+import { HeadSection } from '../sections/HeadSection'
+
+class IndexPage extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      stickyNav: false,
+    }
+  }
+
+  render () {
+    // <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    console.log('topo', topo)
+
+    return (
+      <Layout>
+        <ReactPageScroller ref={c => (this.reactPageScroller = c)}>
+          <HeadSection />
+          <Fragment>
+            <Section description={'nice section'} content={'auri e eli'} backgroundColor={grey} index={1} />
+          </Fragment>
+          <Fragment>
+            <Section description={'sezioni molto fighe'} content={'auri e eli'} background={topo} index={2} />
+          </Fragment>
+        </ReactPageScroller>
+        <GlobalStyle />
+      </Layout>
+    )
+  }
+}
 
 export default IndexPage
