@@ -1,14 +1,11 @@
 import React, { Fragment } from 'react'
-import { Link } from 'gatsby'
 import ReactPageScroller from 'react-page-scroller'
 
-import Section from '../components/section'
 import { GlobalStyle } from '../styles/main-styles'
-// import SEO from '../components/seo'
-
-import { grey } from '../data/colors.yaml'
 
 import { DetailSection } from '../sections/DetailSection'
+import { DinnerSection } from '../sections/DinnerSection'
+import { FootSection } from '../sections/FootSection'
 import { HeadSection } from '../sections/HeadSection'
 
 class IndexPage extends React.Component {
@@ -27,12 +24,8 @@ class IndexPage extends React.Component {
         <ReactPageScroller ref={c => (this.reactPageScroller = c)}>
           <HeadSection />
           <DetailSection />
-          <Fragment>
-            <Section description={'nice section'} content={'auri e eli'} backgroundColor={grey} index={1} />
-          </Fragment>
-          <Fragment>
-            <Section description={'sezioni molto fighe'} content={'auri e eli'} index={2} />
-          </Fragment>
+          <DinnerSection />
+          <FootSection />
         </ReactPageScroller>
         <GlobalStyle />
       </Fragment>
