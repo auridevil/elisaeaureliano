@@ -13,11 +13,11 @@ const Section = ({ title, description, index, background, backgroundColor, cta, 
     className="section"
     style={{
       backgroundColor,
-      ...(background && { backgroundImage: `url(${ background })` }),
+      ...(background && { backgroundImage: `url(${ background })` })
     }}
     index={index}
   >
-    {!background && <Texture className="svg-background" width={100} height={100} data={{}} options={{ index }} />}
+    {/* {!background && <Texture className="svg-background" width={100} height={100} data={{}} options={{ index }} />} */}
 
     {/*
     <SectionContents>

@@ -8,6 +8,7 @@ import { GlobalStyle } from '../styles/main-styles'
 
 import { grey } from '../data/colors.yaml'
 
+import { DetailSection } from '../sections/DetailSection'
 import { HeadSection } from '../sections/HeadSection'
 
 class IndexPage extends React.Component {
@@ -25,6 +26,7 @@ class IndexPage extends React.Component {
       <Fragment>
         <ReactPageScroller ref={c => (this.reactPageScroller = c)}>
           <HeadSection />
+          <DetailSection />
           <Fragment>
             <Section description={'nice section'} content={'auri e eli'} backgroundColor={grey} index={1} />
           </Fragment>
