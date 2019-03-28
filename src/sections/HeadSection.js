@@ -12,7 +12,9 @@ export class HeadSection extends React.Component {
 
     return (
       <Section background={topo} backgroundColor={orangered} index={0}>
+        <div>logo qui</div>
         <HeadTitle>elisa & aureliano</HeadTitle>
+        <div>si sposano</div>
       </Section>
     )
   }

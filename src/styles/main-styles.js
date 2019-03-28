@@ -2,52 +2,82 @@ import styled, { createGlobalStyle, css, keyframes } from 'styled-components'
 
 import { orangered, black, white, grey } from '../data/colors.yaml'
 import fonts from '../data/fontsizes.yaml'
+import { srv, srv2 } from '../data/fonts.yaml'
+import { SurvFine, SurvDisplay } from './font-face.js'
 
-/*
-
-Globals
-
-*/
+/* Globals */
 
 const spacing = {
   quarter: '10px',
   half: '20px',
   single: '40px',
-  double: '80px',
+  double: '80px'
 }
 
 const small = (...args) => css`
-  @media screen and (max-width: 600px) {
-    ${ css(...args) }
-  }
+    @media screen and (max-width: 600px) {
+        ${ css(...args) }
+    }
 `
 const medium = (...args) => css`
-  @media screen and (min-width: 601px) and (max-width: 1200px) {
-    ${ css(...args) }
-  }
+    @media screen and (min-width: 601px) and (max-width: 1200px) {
+        ${ css(...args) }
+    }
 `
 const large = (...args) => css`
-  @media screen and (min-width: 1201px) {
-    ${ css(...args) }
-  }
+    @media screen and (min-width: 1201px) {
+        ${ css(...args) }
+    }
 `
 
 const easeOutCubic = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)'
 
-export const GlobalStyle = createGlobalStyle`
-  
-  @import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+// font-family: 'Antic Didone', serif;
+//  @import url('https://fonts.googleapis.com/css?family=Antic+Didone');
+/*  @font-face {
+    font-family: 'Surveyor Display','Surveyor Display A','Surveyor Display B',serif';
+    src: url(surveyor) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
+    @font-face {
+    font-family: 'Surveyor Display';
+    src: url(${ surveyor }) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
   *, *:before, *:after {
     box-sizing: border-box;
   }
 
+    @import url('https://fonts.googleapis.com/css?family=Antic+Didone')
+
+      @font-face{
+    font-family: "Surveyor Display B";
+    src: url(${ srv2 };
+    font-weight:300;
+    font-style:normal;
+  }
+  */
+
+export const GlobalStyle = createGlobalStyle`
+  
+  ${ SurvFine }
+  ${ SurvDisplay }
+
   body{
-    font-family: "Space Mono", monospace, sans-serif;
-    font-variant-ligatures: no-common-ligatures
+    font-variant-ligatures: no-common-ligatures;
     padding: 0;
     margin: 0;
-    color: ${ black };
+    color: ${ white };
+    font-family: 'Surveyor Fine';
+    font-weight: 300;
+    font-style: normal;
+    text-transform: lowercase;
+    font-size: 5rem;
+    letter-spacing: 0;
+    font-weight: 500;
   }
 
   h1, h2, h3, h4, h5, h6{
@@ -69,31 +99,33 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration: underline;
     }
   }
+
+
 `
 
 export const Layout = styled.div`
-  line-height: 1.6;
-  position: relative;
+    line-height: 1.6;
+    position: relative;
 `
 
 export const Wrapper = styled.div`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `
 
 export const TextureWrapper = styled.div`
-  svg {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-  }
+    svg {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
 `
 
 /*
@@ -152,14 +184,10 @@ export const SectionContents = styled.div`
   &.section-intro-contents{
     border: none;
     ${ small`
-      padding: ${ spacing.double } ${ spacing.half } ${ spacing.half } ${
-  spacing.half
-};
+      padding: ${ spacing.double } ${ spacing.half } ${ spacing.half } ${ spacing.half };
     ` }
     ${ medium`
-      padding: ${ spacing.double } ${ spacing.single } ${ spacing.single } ${
-  spacing.single
-};
+      padding: ${ spacing.double } ${ spacing.single } ${ spacing.single } ${ spacing.single };
     ` }
     ${ large`
       padding: ${ spacing.double } ${ spacing.double };
@@ -168,39 +196,39 @@ export const SectionContents = styled.div`
 `
 
 export const SectionTop = styled.div`
-  ${ medium`
+    ${ medium`
     display: flex;
   ` }
-  ${ large`
+    ${ large`
     display: flex;
   ` }
   justify-content: space-between;
-  align-items: flex-start;
+    align-items: flex-start;
 `
 
 export const SectionHeader = styled.div``
 
 export const SectionCTA = styled.a`
-  margin-top: ${ spacing.half };
-  border: 1px solid ${ black };
-  display: block;
-  padding: 10px 20px;
-  border-radius: 3px;
-  color: ${ black };
-  font-weight: normal;
-  box-shadow: 4px 4px ${ black };
-  &:hover {
-    text-decoration: none;
-    background: ${ orangered };
-    color: ${ white };
-    border-color: ${ orangered };
-  }
-  &:active {
-    position: relative;
-    top: 2px;
-    left: 2px;
-    box-shadow: 2px 2px ${ black };
-  }
+    margin-top: ${ spacing.half };
+    border: 1px solid ${ black };
+    display: block;
+    padding: 10px 20px;
+    border-radius: 3px;
+    color: ${ black };
+    font-weight: normal;
+    box-shadow: 4px 4px ${ black };
+    &:hover {
+        text-decoration: none;
+        background: ${ orangered };
+        color: ${ white };
+        border-color: ${ orangered };
+    }
+    &:active {
+        position: relative;
+        top: 2px;
+        left: 2px;
+        box-shadow: 2px 2px ${ black };
+    }
 `
 
 export const SectionTitle = styled.h2`
@@ -243,31 +271,31 @@ const fadeIn = keyframes`
 `
 
 export const LogoBlock = styled.div`
-  position: absolute;
-  top: 0px;
-  left: 50%;
-  margin-top: -60px;
-  margin-left: -60px;
-  span {
-    display: none;
-  }
-  opacity: 0;
-  animation: ${ fadeIn } 400ms 700ms ${ easeOutCubic } 1;
-  animation-fill-mode: forwards;
-  z-index: 120;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-top: -60px;
+    margin-left: -60px;
+    span {
+        display: none;
+    }
+    opacity: 0;
+    animation: ${ fadeIn } 400ms 700ms ${ easeOutCubic } 1;
+    animation-fill-mode: forwards;
+    z-index: 120;
 `
 
 export const LogoImage = styled.h1`
-  position: relative;
-  width: 120px;
-  height: 120px;
-  background: ${ black };
-  padding: 20px;
-  border-radius: 100%;
-  margin: 0;
-  path {
-    fill: white;
-  }
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: ${ black };
+    padding: 20px;
+    border-radius: 100%;
+    margin: 0;
+    path {
+        fill: white;
+    }
 `
 
 /*
@@ -277,14 +305,14 @@ Icons
 */
 
 export const IconBlock = styled.div`
-  ${ small`
+    ${ small`
     display: none;
   ` }
-  display: flex;
-  position: absolute;
-  left: -60px;
-  top: 35px;
-  justify-content: center;
+    display: flex;
+    position: absolute;
+    left: -60px;
+    top: 35px;
+    justify-content: center;
 `
 
 export const Icon = styled.div`
@@ -335,7 +363,7 @@ Intro
 */
 
 export const AboutWrapper = styled.div`
-  position: relative;
+    position: relative;
 `
 
 const swingDown = keyframes`
@@ -358,9 +386,7 @@ export const AboutContents = styled.div`
     padding: ${ spacing.double } ${ spacing.half } ${ spacing.half } ${ spacing.half };
   ` }
   ${ medium`
-    padding: ${ spacing.double } ${ spacing.single } ${ spacing.single } ${
-  spacing.single
-};
+    padding: ${ spacing.double } ${ spacing.single } ${ spacing.single } ${ spacing.single };
   ` }
   ${ large`
     padding: ${ spacing.double } ${ spacing.double };
@@ -384,20 +410,20 @@ export const AboutDescription = styled.div`
 `
 
 export const AboutLinksBlock = styled.div`
-  margin-bottom: ${ spacing.single };
+    margin-bottom: ${ spacing.single };
 `
 
 export const AboutLink = styled.a`
-  display: block;
+    display: block;
 `
 
 export const SocialLinks = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 
-  ${ small`
+    ${ small`
     padding: 0 ${ spacing.half };
   ` }
 `
@@ -408,31 +434,31 @@ const grow = keyframes`
 `
 
 export const SocialIcon = styled.div`
-  height: 40px;
-  width: 40px;
-  background: ${ black };
-  border-radius: 100%;
-  padding: 2px;
+    height: 40px;
+    width: 40px;
+    background: ${ black };
+    border-radius: 100%;
+    padding: 2px;
 
-  path {
-    fill: white;
-  }
-  &:hover {
-    background: ${ orangered };
-  }
-  margin: 0 10px;
-  transform: scale(0);
-  animation: ${ grow } 300ms 1300ms ${ easeOutCubic } 1;
-  animation-fill-mode: forwards;
+    path {
+        fill: white;
+    }
+    &:hover {
+        background: ${ orangered };
+    }
+    margin: 0 10px;
+    transform: scale(0);
+    animation: ${ grow } 300ms 1300ms ${ easeOutCubic } 1;
+    animation-fill-mode: forwards;
 
-  &:nth-child(3),
-  &:nth-child(5) {
-    animation-delay: 1400ms;
-  }
-  &:nth-child(2),
-  &:nth-child(6) {
-    animation-delay: 1500ms;
-  }
+    &:nth-child(3),
+    &:nth-child(5) {
+        animation-delay: 1400ms;
+    }
+    &:nth-child(2),
+    &:nth-child(6) {
+        animation-delay: 1500ms;
+    }
 `
 
 const expand = keyframes`
@@ -441,24 +467,24 @@ const expand = keyframes`
 `
 
 export const SocialLinksPlaceholder = styled.span`
-  ${ small`
+    ${ small`
     display: none;
   ` }
-  display: block;
-  height: 1px;
-  border-bottom: 1px dotted ${ black };
-  flex: 1;
-  transform: scaleX(0);
-  animation: ${ expand } 100ms 1600ms ${ easeOutCubic } 1;
-  animation-fill-mode: forwards;
-  &:first-of-type {
-    margin-right: 10px;
-    transform-origin: top right;
-  }
-  &:last-of-type {
-    margin-left: 10px;
-    transform-origin: top left;
-  }
+    display: block;
+    height: 1px;
+    border-bottom: 1px dotted ${ black };
+    flex: 1;
+    transform: scaleX(0);
+    animation: ${ expand } 100ms 1600ms ${ easeOutCubic } 1;
+    animation-fill-mode: forwards;
+    &:first-of-type {
+        margin-right: 10px;
+        transform-origin: top right;
+    }
+    &:last-of-type {
+        margin-left: 10px;
+        transform-origin: top left;
+    }
 `
 
 /*
@@ -468,9 +494,9 @@ Items
 */
 
 export const Items = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  ${ large`
+    display: flex;
+    flex-wrap: wrap;
+    ${ large`
     > div {
       width: calc( ( 100% - ${ spacing.double } ) / 2 );
     }
@@ -481,26 +507,26 @@ export const Items = styled.div`
 `
 
 export const ItemBlock = styled.div`
-  margin-top: ${ spacing.single };
+    margin-top: ${ spacing.single };
 `
 
 export const ItemTitle = styled.h3`
-  font-size: ${ fonts.medium };
-  margin-bottom: ${ spacing.quarter };
+    font-size: ${ fonts.medium };
+    margin-bottom: ${ spacing.quarter };
 `
 
 export const ItemDescription = styled.div`
-  font-size: ${ fonts.small };
-  p {
-    margin-bottom: ${ spacing.half };
-    &:last-of-type {
-      margin-bottom: 0;
+    font-size: ${ fonts.small };
+    p {
+        margin-bottom: ${ spacing.half };
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
-  }
 `
 export const ItemDate = styled.span`
-  color: ${ grey };
-  font-weight: normal;
+    color: ${ grey };
+    font-weight: normal;
 `
 
 /*
