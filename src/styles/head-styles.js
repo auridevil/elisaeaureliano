@@ -1,13 +1,29 @@
-import styled, { createGlobalStyle, css, keyframes } from 'styled-components'
+import styled from 'styled-components'
 
-import { orangered, black, white, grey } from '../data/colors.yaml'
+import { white } from '../data/colors.yaml'
 
 export const HeadTitle = styled.h1`
     font-family: 'Surveyor Fine';
-    font-weight: 300;
+    font-weight: 500;
     text-transform: lowercase;
-    font-size: 5rem;
+    font-size: 6rem;
     letter-spacing: 0;
     color: ${ white };
-    line-height: 1;
+    line-height: 1.2;
+    margin-bottom: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0.75em;
+    margin-left: 0px;
+`
+export const HeadSubtitle = styled.div`
+    font-family: 'Brandon Grotesque';
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    color: ${ white };
+    line-height: 1.2;
+    margin-left: auto;
+    margin-right: auto;
 `

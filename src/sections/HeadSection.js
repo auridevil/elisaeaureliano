@@ -3,7 +3,7 @@ import React from 'react'
 import Section from '../components/section'
 
 import { mainColor } from '../data/colors.yaml'
-import { HeadTitle } from '../styles/head-styles'
+import { HeadSubtitle, HeadTitle } from '../styles/head-styles'
 import topo from '../images/topo.svg'
 
 export class HeadSection extends React.Component {
@@ -14,7 +14,7 @@ export class HeadSection extends React.Component {
       <Section background={topo} backgroundColor={mainColor} index={0}>
         <div>logo qui</div>
         <HeadTitle>elisa & aureliano</HeadTitle>
-        <div>si sposano</div>
+        <HeadSubtitle>si sposano</HeadSubtitle>
       </Section>
     )
   }

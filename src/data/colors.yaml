@@ -4,7 +4,16 @@ black: "#282B2E"
 white: "#ffffff"
 grey: "#BBC0C6"
 
-mainColor: "#EB613D"
-secondColor: "#0000ff"
-thirdColor: "#0000ff"
-fourthColor: "#0000ff"
+#Solution 1: https://coolors.co/edc0ad-ddcac1-dedbd2-91a191-597377
+#mainColor: "#EDC0AD"
+#secondColor: "#DDCAC1"
+#thirdColor: "#91A191"
+#fourthColor: "#597377"
+#fifthColor: "#DEDBD2"
+
+#Soluzion 2: https://coolors.co/e5ceb9-dbd9d6-899878-546d63-121113
+mainColor: "#e5ceb9"
+secondColor: "#dbd9d6"
+thirdColor: "#899878"
+fourthColor: "#546d63"
+fifthColor: "#121113"

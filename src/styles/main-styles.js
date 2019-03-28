@@ -3,7 +3,7 @@ import styled, { createGlobalStyle, css, keyframes } from 'styled-components'
 import { orangered, black, white, grey } from '../data/colors.yaml'
 import fonts from '../data/fontsizes.yaml'
 import { srv, srv2 } from '../data/fonts.yaml'
-import { SurvFine, SurvDisplay } from './font-face.js'
+import { BranGro, SurvFine, SurvDisplay } from './font-face.js'
 
 /* Globals */
 
@@ -63,6 +63,7 @@ const easeOutCubic = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)'
 
 export const GlobalStyle = createGlobalStyle`
   
+  ${ BranGro }
   ${ SurvFine }
   ${ SurvDisplay }
 
@@ -148,6 +149,7 @@ export const SectionBlock = styled.section`
   ` }
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   position: relative;
   &:last-of-type{
