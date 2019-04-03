@@ -14,17 +14,17 @@ const spacing = {
   double: '80px'
 }
 
-const small = (...args) => css`
+export const small = (...args) => css`
     @media screen and (max-width: 600px) {
         ${ css(...args) }
     }
 `
-const medium = (...args) => css`
+export const medium = (...args) => css`
     @media screen and (min-width: 601px) and (max-width: 1200px) {
         ${ css(...args) }
     }
 `
-const large = (...args) => css`
+export const large = (...args) => css`
     @media screen and (min-width: 1201px) {
         ${ css(...args) }
     }
@@ -75,8 +75,6 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Surveyor Fine';
     font-weight: 300;
     font-style: normal;
-    text-transform: lowercase;
-    font-size: 5rem;
     letter-spacing: 0;
     font-weight: 500;
   }
@@ -231,35 +229,7 @@ export const SectionCTA = styled.a`
         left: 2px;
         box-shadow: 2px 2px ${ black };
     }
-`
 
-export const SectionTitle = styled.h2`
-  ${ small`
-    font-size: ${ fonts.large };
-  ` }
-  ${ medium`
-    font-size: ${ fonts.large };
-  ` }
-  ${ large`
-    font-size: ${ fonts.extralarge };
-  ` }
-  line-height: 1;
-  margin-bottom: ${ spacing.quarter };
-`
-
-export const SectionDescription = styled.div`
-  ${ small`
-    font-size: ${ fonts.small };
-  ` }
-  ${ medium`
-    font-size: ${ fonts.small };
-  ` }
-  ${ large`
-    font-size: ${ fonts.medium };
-  ` }
-  p+p{
-    margin-top: ${ spacing.half };
-  }
 `
 /*
 

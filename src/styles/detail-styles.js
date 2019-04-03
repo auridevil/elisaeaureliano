@@ -1,15 +1,46 @@
 import styled from 'styled-components'
+import { large, small } from './main-styles'
+import { secondColor } from '../data/colors.yaml'
 
+export const Pane = styled.section`
+    box-sizing: border-box;
+    min-height: 50vh;
+    position: relative;
+    width: 100%;
+    padding: 6rem 1.5em;
+    text-align: center;
+    background-color: ${ secondColor };
+    flex: 1;
+    display: block;
+    align-items: center;
+    position: relative;
+`
+export const TitleSection = styled.div`
+    display: block;
+`
 export const IconImg = styled.img`
     width: 60px;
     margin: 0;
     max-width: 100%;
+    margin-bottom: 10px;
 `
-export const InfoBlock = styled.div`
+export const WhoBlock = styled.div`
     font-family: 'Brandon Grotesque';
     line-height: 1.2;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 50px;
+`
+export const InfoBlock = styled.div`
+    ${ small`
+        padding: 10px 10px 10px 10px;
+    ` }
+    ${ large`
+        margin-left: 10%;
+        margin-right:10%;
+        display:inline-block;
+    ` }
+    font-family: 'Brandon Grotesque';
+    line-height: 1.2;
+    margin-bottom: 50px;
 `
 export const InfoTitle = styled.h2`
     font-family: 'Brandon Grotesque';
@@ -17,7 +48,38 @@ export const InfoTitle = styled.h2`
     letter-spacing: .2em;
     text-transform: uppercase;
     line-height: 1.2;
+    color: #B28F4F;
+`
+export const Description = styled.p`
+    font-size:1.5em;
+    max-width:45em;
+    line-height:1.5;
+    font-family: 'Brandon Grotesque';
+    color: #333;
+    margin: 24px;
     margin-left: auto;
     margin-right: auto;
-    color: #B28F4F;
+`
+export const SubDescription = styled.p`
+    letter-spacing: .1em;
+    max-width: 45em;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: #333;
+    margin-left: auto;
+    margin-right: auto;
+`
+export const Underline = styled.span`
+    display: block;
+    width: 60px;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: #333;
+    margin-left: auto;
+    margin-right: auto;
+`
+export const PaneRow = styled.div`
+    display: block;
+    margin-bottom: 3em;
+    text-align: center;
 `
