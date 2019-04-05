@@ -38,5 +38,6 @@ export const ScrollDown = styled.div`
     text-align: center;
     color: #fff;
     display: block;
-    margin-top: 38%;
+    position: absolute;
+    bottom: 100px;
 `;
