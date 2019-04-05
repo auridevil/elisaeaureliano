@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+URL:http://elisaeaureliano.com/#
+DTSTART:20190621T143000Z
+DTEND:20190621T220000Z
+SUMMARY:Elisa e Aureliano si sposano
+DESCRIPTION:Elisa e Aureliano si sposano. Ore 16.30 al castello di Fossano e a seguire rinfresco a Palazzo Drago, Verzuolo.
+LOCATION:Fossano, CN
+END:VEVENT
+END:VCALENDAR

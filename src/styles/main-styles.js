@@ -1,36 +1,35 @@
-import styled, { createGlobalStyle, css, keyframes } from 'styled-components'
+import styled, { createGlobalStyle, css, keyframes } from "styled-components";
 
-import { orangered, black, white, grey } from '../data/colors.yaml'
-import fonts from '../data/fontsizes.yaml'
-import { srv, srv2 } from '../data/fonts.yaml'
-import { BranGro, SurvFine, SurvDisplay } from './font-face.js'
+import { orangered, black, white, grey } from "../data/colors.yaml";
+import fonts from "../data/fontsizes.yaml";
+import { BranGro, SurvFine, SurvDisplay } from "./font-face.js";
 
 /* Globals */
 
 const spacing = {
-  quarter: '10px',
-  half: '20px',
-  single: '40px',
-  double: '80px'
-}
+    quarter: "10px",
+    half: "20px",
+    single: "40px",
+    double: "80px"
+};
 
 export const small = (...args) => css`
     @media screen and (max-width: 600px) {
-        ${ css(...args) }
+        ${css(...args)}
     }
-`
+`;
 export const medium = (...args) => css`
     @media screen and (min-width: 601px) and (max-width: 1200px) {
-        ${ css(...args) }
+        ${css(...args)}
     }
-`
+`;
 export const large = (...args) => css`
     @media screen and (min-width: 1201px) {
-        ${ css(...args) }
+        ${css(...args)}
     }
-`
+`;
 
-const easeOutCubic = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)'
+const easeOutCubic = "cubic-bezier(0.215, 0.610, 0.355, 1.000)";
 
 // font-family: 'Antic Didone', serif;
 //  @import url('https://fonts.googleapis.com/css?family=Antic+Didone');
@@ -63,15 +62,15 @@ const easeOutCubic = 'cubic-bezier(0.215, 0.610, 0.355, 1.000)'
 
 export const GlobalStyle = createGlobalStyle`
   
-  ${ BranGro }
-  ${ SurvFine }
-  ${ SurvDisplay }
+  ${BranGro}
+  ${SurvFine}
+  ${SurvDisplay}
 
   body{
     font-variant-ligatures: no-common-ligatures;
     padding: 0;
     margin: 0;
-    color: ${ white };
+    color: ${white};
     font-family: 'Surveyor Fine';
     font-weight: 300;
     font-style: normal;
@@ -80,7 +79,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6{
-    margin: 0 0 ${ spacing.single } 0;
+    margin: 0 0 ${spacing.single} 0;
     line-height: 1.3;
   }
 
@@ -90,29 +89,29 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a{
-    color: ${ orangered };
+    color: ${orangered};
     text-decoration: none;
     font-weight: bold;
     &:hover{
-      color: ${ orangered };
+      color: ${orangered};
       text-decoration: underline;
     }
   }
 
 
-`
+`;
 
 export const Layout = styled.div`
     line-height: 1.6;
     position: relative;
-`
+`;
 
 export const Wrapper = styled.div`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-`
+`;
 
 export const TextureWrapper = styled.div`
     svg {
@@ -125,7 +124,7 @@ export const TextureWrapper = styled.div`
         width: 100%;
         z-index: 1;
     }
-`
+`;
 
 /*
 
@@ -134,17 +133,17 @@ Sections
 */
 
 export const SectionBlock = styled.section`
-  ${ small`
+  ${small`
     padding: 10px 10px 10px 10px;
-  ` }
-  ${ medium`
+  `}
+  ${medium`
     padding: 20px 80px 20px 80px;
     min-height: 100vh;
-  ` }
-  ${ large`
+  `}
+  ${large`
     padding: 40px 120px 40px 120px;
     min-height: 100vh;
-  ` }
+  `}
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -159,78 +158,77 @@ export const SectionBlock = styled.section`
   }
   &.section-intro{
     perspective: 1000px;
-    ${ small`
+    ${small`
       padding-top: 80px;
-    ` }
+    `}
   }
-`
+`;
 
 export const SectionContents = styled.div`
   position: relative;
   z-index: 10;
-  background: ${ white };
+  background: ${white};
   box-shadow: 8px 8px rgba(0,0,0,0.15);
   border-left: 40px solid #eee;
-  ${ small`
-    padding: ${ spacing.half } ${ spacing.half };
-  ` }
-  ${ medium`
-    padding: ${ spacing.single } ${ spacing.double };
-  ` }
-  ${ large`
-    padding: ${ spacing.single } ${ spacing.double };
-  ` }
+  ${small`
+    padding: ${spacing.half} ${spacing.half};
+  `}
+  ${medium`
+    padding: ${spacing.single} ${spacing.double};
+  `}
+  ${large`
+    padding: ${spacing.single} ${spacing.double};
+  `}
   // height: 100%;
   &.section-intro-contents{
     border: none;
-    ${ small`
-      padding: ${ spacing.double } ${ spacing.half } ${ spacing.half } ${ spacing.half };
-    ` }
-    ${ medium`
-      padding: ${ spacing.double } ${ spacing.single } ${ spacing.single } ${ spacing.single };
-    ` }
-    ${ large`
-      padding: ${ spacing.double } ${ spacing.double };
-    ` }
+    ${small`
+      padding: ${spacing.double} ${spacing.half} ${spacing.half} ${spacing.half};
+    `}
+    ${medium`
+      padding: ${spacing.double} ${spacing.single} ${spacing.single} ${spacing.single};
+    `}
+    ${large`
+      padding: ${spacing.double} ${spacing.double};
+    `}
   }
-`
+`;
 
 export const SectionTop = styled.div`
-    ${ medium`
+    ${medium`
     display: flex;
-  ` }
-    ${ large`
+  `}
+    ${large`
     display: flex;
-  ` }
+  `}
   justify-content: space-between;
     align-items: flex-start;
-`
+`;
 
-export const SectionHeader = styled.div``
+export const SectionHeader = styled.div``;
 
 export const SectionCTA = styled.a`
-    margin-top: ${ spacing.half };
-    border: 1px solid ${ black };
+    margin-top: ${spacing.half};
+    border: 1px solid ${black};
     display: block;
     padding: 10px 20px;
     border-radius: 3px;
-    color: ${ black };
+    color: ${black};
     font-weight: normal;
-    box-shadow: 4px 4px ${ black };
+    box-shadow: 4px 4px ${black};
     &:hover {
         text-decoration: none;
-        background: ${ orangered };
-        color: ${ white };
-        border-color: ${ orangered };
+        background: ${orangered};
+        color: ${white};
+        border-color: ${orangered};
     }
     &:active {
         position: relative;
         top: 2px;
         left: 2px;
-        box-shadow: 2px 2px ${ black };
+        box-shadow: 2px 2px ${black};
     }
-
-`
+`;
 /*
 
 Logo
@@ -240,7 +238,7 @@ Logo
 const fadeIn = keyframes`
   from { opacity: 0; }
   to { opacity: 1; }
-`
+`;
 
 export const LogoBlock = styled.div`
     position: absolute;
@@ -252,23 +250,23 @@ export const LogoBlock = styled.div`
         display: none;
     }
     opacity: 0;
-    animation: ${ fadeIn } 400ms 700ms ${ easeOutCubic } 1;
+    animation: ${fadeIn} 400ms 700ms ${easeOutCubic} 1;
     animation-fill-mode: forwards;
     z-index: 120;
-`
+`;
 
 export const LogoImage = styled.h1`
     position: relative;
     width: 120px;
     height: 120px;
-    background: ${ black };
+    background: ${black};
     padding: 20px;
     border-radius: 100%;
     margin: 0;
     path {
         fill: white;
     }
-`
+`;
 
 /*
 
@@ -277,15 +275,15 @@ Icons
 */
 
 export const IconBlock = styled.div`
-    ${ small`
+    ${small`
     display: none;
-  ` }
+  `}
     display: flex;
     position: absolute;
     left: -60px;
     top: 35px;
     justify-content: center;
-`
+`;
 
 export const Icon = styled.div`
   display: flex;
@@ -294,19 +292,19 @@ export const Icon = styled.div`
   position: relative;
   z-index: 110;
   border-radius: 100%;
-  border: 4px solid ${ black };
+  border: 4px solid ${black};
   width: 80px;
   height: 80px;
-  font-size: ${ fonts.large };
-  color: ${ black };
+  font-size: ${fonts.large};
+  color: ${black};
 
-  background: ${ orangered };
-  border-color: ${ orangered };
+  background: ${orangered};
+  border-color: ${orangered};
 
   // &:hover{
-  //   background: ${ orangered };
-  //   border-color: ${ orangered };
-  //   color: ${ white };
+  //   background: ${orangered};
+  //   border-color: ${orangered};
+  //   color: ${white};
   //   text-decoration: none;
   // }
   span{
@@ -317,16 +315,16 @@ export const Icon = styled.div`
     height: 40px;
     width: 40px;
     path, polygon, polyline, rect, line{
-      fill: ${ black };
-      stroke: ${ black };
+      fill: ${black};
+      stroke: ${black};
 
-      fill: ${ white };
-      stroke: ${ white };
+      fill: ${white};
+      stroke: ${white};
 
       fill: transparent;
     }
   }
-`
+`;
 
 /*
 
@@ -336,58 +334,58 @@ Intro
 
 export const AboutWrapper = styled.div`
     position: relative;
-`
+`;
 
 const swingDown = keyframes`
   from { opacity: 0; transform: rotateX(-80deg); }
   to { opacity: 1; transform: rotateX(0deg); }
-`
+`;
 
 export const AboutContents = styled.div`
   transform-origin: top;
   perspective: 500px;
   opacity: 0;
   transform: rotateX(-80deg);
-  animation: ${ swingDown } 400ms 1000ms ${ easeOutCubic } 1;
+  animation: ${swingDown} 400ms 1000ms ${easeOutCubic} 1;
   animation-fill-mode:forwards;
   position: relative;
   z-index: 10;
-  background: ${ white };
+  background: ${white};
   box-shadow: 8px 8px rgba(0,0,0,0.15);
-  ${ small`
-    padding: ${ spacing.double } ${ spacing.half } ${ spacing.half } ${ spacing.half };
-  ` }
-  ${ medium`
-    padding: ${ spacing.double } ${ spacing.single } ${ spacing.single } ${ spacing.single };
-  ` }
-  ${ large`
-    padding: ${ spacing.double } ${ spacing.double };
-  ` }
-`
+  ${small`
+    padding: ${spacing.double} ${spacing.half} ${spacing.half} ${spacing.half};
+  `}
+  ${medium`
+    padding: ${spacing.double} ${spacing.single} ${spacing.single} ${spacing.single};
+  `}
+  ${large`
+    padding: ${spacing.double} ${spacing.double};
+  `}
+`;
 
 export const AboutDescription = styled.div`
-  ${ small`
-    font-size: ${ fonts.small };
-  ` }
-  ${ medium`
-    font-size: ${ fonts.large };
-  ` }
-  ${ large`
-    font-size: ${ fonts.large };
-  ` }
-  margin-bottom: ${ spacing.single };
+  ${small`
+    font-size: ${fonts.small};
+  `}
+  ${medium`
+    font-size: ${fonts.large};
+  `}
+  ${large`
+    font-size: ${fonts.large};
+  `}
+  margin-bottom: ${spacing.single};
   p{
-    margin-bottom: ${ spacing.single }; 
+    margin-bottom: ${spacing.single}; 
   }
-`
+`;
 
 export const AboutLinksBlock = styled.div`
-    margin-bottom: ${ spacing.single };
-`
+    margin-bottom: ${spacing.single};
+`;
 
 export const AboutLink = styled.a`
     display: block;
-`
+`;
 
 export const SocialLinks = styled.div`
     display: flex;
@@ -395,20 +393,20 @@ export const SocialLinks = styled.div`
     align-items: center;
     flex-wrap: wrap;
 
-    ${ small`
-    padding: 0 ${ spacing.half };
-  ` }
-`
+    ${small`
+    padding: 0 ${spacing.half};
+  `}
+`;
 
 const grow = keyframes`
   from { transform: scale(0); }
   to { transform: scale(1); }
-`
+`;
 
 export const SocialIcon = styled.div`
     height: 40px;
     width: 40px;
-    background: ${ black };
+    background: ${black};
     border-radius: 100%;
     padding: 2px;
 
@@ -416,11 +414,11 @@ export const SocialIcon = styled.div`
         fill: white;
     }
     &:hover {
-        background: ${ orangered };
+        background: ${orangered};
     }
     margin: 0 10px;
     transform: scale(0);
-    animation: ${ grow } 300ms 1300ms ${ easeOutCubic } 1;
+    animation: ${grow} 300ms 1300ms ${easeOutCubic} 1;
     animation-fill-mode: forwards;
 
     &:nth-child(3),
@@ -431,23 +429,23 @@ export const SocialIcon = styled.div`
     &:nth-child(6) {
         animation-delay: 1500ms;
     }
-`
+`;
 
 const expand = keyframes`
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
-`
+`;
 
 export const SocialLinksPlaceholder = styled.span`
-    ${ small`
+    ${small`
     display: none;
-  ` }
+  `}
     display: block;
     height: 1px;
-    border-bottom: 1px dotted ${ black };
+    border-bottom: 1px dotted ${black};
     flex: 1;
     transform: scaleX(0);
-    animation: ${ expand } 100ms 1600ms ${ easeOutCubic } 1;
+    animation: ${expand} 100ms 1600ms ${easeOutCubic} 1;
     animation-fill-mode: forwards;
     &:first-of-type {
         margin-right: 10px;
@@ -457,7 +455,7 @@ export const SocialLinksPlaceholder = styled.span`
         margin-left: 10px;
         transform-origin: top left;
     }
-`
+`;
 
 /*
 
@@ -468,38 +466,38 @@ Items
 export const Items = styled.div`
     display: flex;
     flex-wrap: wrap;
-    ${ large`
+    ${large`
     > div {
-      width: calc( ( 100% - ${ spacing.double } ) / 2 );
+      width: calc( ( 100% - ${spacing.double} ) / 2 );
     }
     > div:nth-child(2n) {
-      margin-left: ${ spacing.double };
+      margin-left: ${spacing.double};
     }
-  ` }
-`
+  `}
+`;
 
 export const ItemBlock = styled.div`
-    margin-top: ${ spacing.single };
-`
+    margin-top: ${spacing.single};
+`;
 
 export const ItemTitle = styled.h3`
-    font-size: ${ fonts.medium };
-    margin-bottom: ${ spacing.quarter };
-`
+    font-size: ${fonts.medium};
+    margin-bottom: ${spacing.quarter};
+`;
 
 export const ItemDescription = styled.div`
-    font-size: ${ fonts.small };
+    font-size: ${fonts.small};
     p {
-        margin-bottom: ${ spacing.half };
+        margin-bottom: ${spacing.half};
         &:last-of-type {
             margin-bottom: 0;
         }
     }
-`
+`;
 export const ItemDate = styled.span`
-    color: ${ grey };
+    color: ${grey};
     font-weight: normal;
-`
+`;
 
 /*
 
@@ -508,17 +506,17 @@ Footer
 */
 
 export const FooterContainer = styled.div`
-  ${ small`
+  ${small`
     padding: 10px 10px 10px 10px;
-  ` }
-  ${ medium`
-    padding: ${ spacing.half };
-  ` }
-  ${ large`
-    padding: ${ spacing.half };
-  ` }
+  `}
+  ${medium`
+    padding: ${spacing.half};
+  `}
+  ${large`
+    padding: ${spacing.half};
+  `}
   text-align: center;
-  background: ${ black };
-  color: ${ white };
-  font-size: ${ fonts.extrasmall };
-`
+  background: ${black};
+  color: ${white};
+  font-size: ${fonts.extrasmall};
+`;
