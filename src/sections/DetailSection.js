@@ -28,7 +28,7 @@ export class DetailSection extends React.Component {
                             <InfoTitle>{"Quando"}</InfoTitle>
                             <Underline />
                         </TitleSection>
-                        <Description>{"21 Giugno 2019 - 16:30y"}</Description>
+                        <Description>{"21 Giugno 2019 - 16:30"}</Description>
                         <SubDescription>{"Un venerdì"}</SubDescription>
                         <p>
                             <DetailButton link={"elisaeaureliano.ics"}>{"Aggiungi al calendario"} </DetailButton>

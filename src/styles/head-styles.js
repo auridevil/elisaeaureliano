@@ -2,6 +2,24 @@ import styled from "styled-components";
 
 import { white } from "../data/colors.yaml";
 
+import { mainColor } from "../data/colors.yaml";
+import topo from "../images/topo.svg";
+
+export const Pane = styled.section`
+    box-sizing: border-box;
+    min-height: 50vh;
+    position: relative;
+    width: 100%;
+    padding: 2rem 1.5em;
+    text-align: center;
+    background-color: ${mainColor};
+    background: ${topo};
+    flex: 1;
+    display: block;
+    align-items: center;
+    position: relative;
+`;
+
 export const HeadTitle = styled.h1`
     font-family: "Surveyor Fine";
     font-weight: 500;
@@ -27,6 +45,10 @@ export const HeadSubtitle = styled.div`
     margin-left: auto;
     margin-right: auto;
 `;
+export const HeadImg = styled.img`
+    width: 50%;
+`;
+
 export const ScrollDown = styled.div`
     font-weight: 500;
     letter-spacing: 0.2em;

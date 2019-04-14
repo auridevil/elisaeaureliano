@@ -1,14 +1,14 @@
 import React from "react";
 
-import Section from "../components/section";
-import { fourthColor } from "../data/colors.yaml";
+import { Info, Pane, WriteUs } from "../styles/foot-styles";
 
 export class FootSection extends React.Component {
     render() {
         return (
-            <Section backgroundColor={fourthColor} index={0}>
-                <div>{"Dev by Aureliano Bergese based on Gatsby.js"}</div>
-            </Section>
+            <Pane>
+                <Info>{"designed by Aureliano - powered by gatsbyjs"}</Info>
+                <WriteUs href={"mailto:elisaeaureliano@gmail.com"}>{"elisaeaureliano@gmail.com"}</WriteUs>
+            </Pane>
         );
     }
 }

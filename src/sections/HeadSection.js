@@ -1,17 +1,13 @@
 import React from "react";
 import { sample } from "lodash";
 
-import Section from "../components/section";
-
-import { mainColor } from "../data/colors.yaml";
 import { header } from "../data/sentences.yaml";
-import { HeadSubtitle, HeadTitle, ScrollDown } from "../styles/head-styles";
-import topo from "../images/topo.svg";
+import { HeadSubtitle, HeadTitle, Pane, ScrollDown } from "../styles/head-styles";
 
 export class HeadSection extends React.Component {
     render() {
         return (
-            <Section background={topo} backgroundColor={mainColor} index={0}>
+            <Pane>
                 <div id="mark">
                     <svg width="200" id="markSvg" viewBox="0 0 521 52" fill="currentColor" data-reactid=".4">
                         <path
@@ -36,7 +32,7 @@ export class HeadSection extends React.Component {
                         <path d="M0,22.244 L2.493,26.562 L4.986,22.244 L0,22.244 Z" />
                     </svg>
                 </ScrollDown>
-            </Section>
+            </Pane>
         );
     }
 }
