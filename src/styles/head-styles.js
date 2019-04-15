@@ -18,6 +18,7 @@ export const Pane = styled.section`
     display: block;
     align-items: center;
     position: relative;
+    min-height: 100vh;
 `;
 
 export const HeadTitle = styled.h1`
