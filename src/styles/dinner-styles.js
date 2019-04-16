@@ -18,7 +18,7 @@ export const Pane = styled.section`
 
 export const InfoTitle = styled.h2`
     font-family: 'Brandon Grotesque';
-    font-size: 3rem;
+    font-size: 4vw;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     line-height: 1.2;
@@ -35,14 +35,12 @@ export const Underline = styled.span`
     margin-left: auto;
     margin-right: auto;
 `
-
 export const RestaurantImage = styled.img`
-    width: 350px;
+    width: 25%;
+    height: auto;
     margin: 1em 0 1.5em;
     border-radius: 100%;
-    padding-top: 50px;
 `
-
 export const SubTitle = styled.h4`
     font-family: 'Surveyor Fine';
     font-size: 1.875rem;

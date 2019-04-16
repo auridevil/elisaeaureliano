@@ -25,7 +25,7 @@ export const HeadTitle = styled.h1`
     font-family: 'Surveyor Fine';
     font-weight: 500;
     text-transform: lowercase;
-    font-size: 6rem;
+    font-size: 9vw;
     letter-spacing: 0;
     color: ${ white };
     line-height: 1.2;
@@ -34,6 +34,12 @@ export const HeadTitle = styled.h1`
     margin-right: 0px;
     margin-bottom: 0.75em;
     margin-left: 0px;
+    @media screen and (max-width: 600px) {
+        font-size: 3em;
+    }
+    @media screen and (min-width: 601px) {
+        font-size: 6em;
+    }
 `
 export const HeadSubtitle = styled.div`
     font-family: 'Brandon Grotesque';
@@ -55,11 +61,11 @@ export const ScrollDown = styled.div`
     letter-spacing: 0.2em;
     font-family: 'Brandon Grotesque';
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1.2rem;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5;
-    color: #fff;
+    color: ${ white };
     display: block;
-    bottom: 100px;
-    padding-top: 300px;
+    bottom: 10px;
+    padding-top: 250px;
 `
