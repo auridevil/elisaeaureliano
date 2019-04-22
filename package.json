@@ -2,7 +2,7 @@
     "name": "elisaeaureliano",
     "private": false,
     "description": "Our wedding website",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "author": "Aureliano Bergese <aureliano.bergese-at-gmail-dot-com>",
     "dependencies": {
         "bootstrap": "^4.3.1",
