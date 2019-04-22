@@ -1,31 +1,17 @@
-import React, { Fragment } from "react";
+import "bootstrap/dist/css/bootstrap.css";
 
-import { GlobalStyle } from "../styles/main-styles";
+import React from "react";
+import { Provider } from "react-redux";
 
-import { DetailSection } from "../sections/DetailSection";
-import { DinnerSection } from "../sections/DinnerSection";
-import { FootSection } from "../sections/FootSection";
-import { HeadSection } from "../sections/HeadSection";
+import { store } from "../state";
+import Page from "./Page";
 
 class IndexPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            stickyNav: false
-        };
-    }
-
     render() {
         return (
-            <Fragment>
-                {/* <ReactPageScroller ref={c => (this.reactPageScroller = c)}> */}
-                <HeadSection />
-                <DetailSection />
-                <DinnerSection />
-                <FootSection />
-                {/*  </ReactPageScroller> */}
-                <GlobalStyle />
-            </Fragment>
+            <Provider store={store}>
+                <Page />
+            </Provider>
         );
     }
 }
