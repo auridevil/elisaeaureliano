@@ -1,5 +1,5 @@
 import React from "react";
-import { FormControl, InputGroup, Modal } from "react-bootstrap";
+import { FormControl, InputGroup, Modal, Tooltip } from "react-bootstrap";
 import styled from "styled-components";
 
 const StyledInputText = styled(InputGroup.Text)`
@@ -20,6 +20,10 @@ export class AccessModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+    }
+
+    componentDidMount() {
+        this.input.focus();
     }
 
     handleSubmit = e => {
@@ -45,7 +49,14 @@ export class AccessModal extends React.Component {
                     <InputGroup.Prepend>
                         <StyledInputText>Inserisci la password</StyledInputText>
                     </InputGroup.Prepend>
-                    <StyledFormControl placeholder="Qui" aria-label="Password" onChange={this.handleChange} />
+                    <StyledFormControl
+                        placeholder="Qui"
+                        aria-label="Password"
+                        onChange={this.handleChange}
+                        ref={i => {
+                            this.input = i;
+                        }}
+                    />
                 </InputGroup>
             </Modal>
         );

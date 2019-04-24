@@ -8,16 +8,16 @@ export class DetailButton extends React.Component {
     };
 
     render() {
-        const { children, link, color } = this.props;
+        const { children, link, color, handler } = this.props;
         if (color === "white") {
             return (
-                <WhiteButton href={link ? link : undefined} target={link ? "_blank" : undefined}>
+                <WhiteButton href={link ? link : undefined} target={link ? "_blank" : undefined} onClick={handler}>
                     {children}
                 </WhiteButton>
             );
         } else {
             return (
-                <GoldenButton href={link ? link : undefined} target={link ? "_blank" : undefined}>
+                <GoldenButton href={link ? link : undefined} target={link ? "_blank" : undefined} onClick={handler}>
                     {children}
                 </GoldenButton>
             );

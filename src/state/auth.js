@@ -6,7 +6,7 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case AUTH_OK:
-            return { ...state, authDone: true };
+            return { ...state, authDone: true, data: action.payload };
         default:
             return state;
     }

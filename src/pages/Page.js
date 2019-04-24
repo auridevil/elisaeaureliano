@@ -7,17 +7,20 @@ import { DetailSection } from "../sections/DetailSection";
 import { DinnerSection } from "../sections/DinnerSection";
 import { FootSection } from "../sections/FootSection";
 import { HeadSection } from "../sections/HeadSection";
+import { RSVPSection } from "../sections/RSVPSection";
 import { AccessModal } from "../components/AccessModal";
 
 import { auth } from "../actions/auth";
+import { rsvp } from "../actions/rsvp";
 
 class Page extends React.Component {
     renderSubSite() {
-        const { authDone } = this.props;
+        const { authDone, authData, rsvp } = this.props;
         return authDone ? (
             <Fragment>
                 <DetailSection />
                 <DinnerSection />
+                <RSVPSection authData={authData} rsvp={rsvp} />
                 <FootSection />
             </Fragment>
         ) : (
@@ -40,9 +43,11 @@ class Page extends React.Component {
 
 export default connect(
     state => ({
-        authDone: state.auth.authDone
+        authDone: state.auth.authDone,
+        authData: state.auth.data
     }),
     dispatch => ({
+        rsvp: bindActionCreators(rsvp, dispatch),
         validateAuth: bindActionCreators(auth, dispatch)
     })
 )(Page);
