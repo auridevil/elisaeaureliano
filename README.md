@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/auridevil/elisaeaureliano/master/src/images/logo_EA.svg"/>
+<img src="https://github.com/auridevil/elisaeaureliano/blob/master/src/images/favicon-32x32.png"/>
 # <a href="https://elisaeaureliano.com" target="_blank">elisaeaureliano.com</a>
 
 Elisa e Aureliano wedding website
