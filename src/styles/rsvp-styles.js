@@ -72,3 +72,12 @@ export const IconImg = styled.img`
     max-width: 100%;
     margin-bottom: 40px;
 `;
+
+export const SubTitle = styled.h4`
+    font-family: "Surveyor Fine";
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin: 0 0 0.75em;
+    line-height: 1.2;
+`;

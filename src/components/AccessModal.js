@@ -34,7 +34,7 @@ export class AccessModal extends React.Component {
     handleChange = e => {
         const { validate } = this.props;
         const value = e.target.value;
-        if (value.length > 5) {
+        if (value.length > 10) {
             validate(value.toLowerCase());
             console.log("Validating:", e.target.value);
         }

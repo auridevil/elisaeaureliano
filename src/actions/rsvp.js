@@ -1,8 +1,8 @@
 const Airtable = require("airtable");
 
-const RSVP_START = "RSVP_START";
-const RSVP_SUCCESS = "RSVP_SUCCESS";
-const RSVP_FAILED = "RSVP_FAILED";
+export const RSVP_START = "RSVP_START";
+export const RSVP_SUCCESS = "RSVP_SUCCESS";
+export const RSVP_FAILED = "RSVP_FAILED";
 
 /*
 const BASECODE = "appAHmV8EPUeOYwvT";
