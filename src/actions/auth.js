@@ -10,12 +10,18 @@ const AUTH_URL = "simpleexchanger-7t2g1yqrx.now.sh:443/";
 export const auth = value => async dispatch => {
     dispatch({ type: VALIDATE_AUTH, token: value });
     try {
-        console.log("axios call");
-        const { data } = await axios.get(`${CORS_URL}${AUTH_URL}?k=${value}`, { crossDomain: true });
-        if (data && data.status != 401) {
-            dispatch({ type: AUTH_OK, payload: data });
+        /** avoid lot of backend calling - free tier */
+        const localData = JSON.parse(localStorage.getItem(AUTH_URL));
+        if (localData) {
+            dispatch({ type: AUTH_OK, payload: localData });
         } else {
-            dispatch({ type: AUHT_KO, payload: data });
+            const { data } = await axios.get(`${CORS_URL}${AUTH_URL}?k=${value}`, { crossDomain: true });
+            if (data && data.status != 401) {
+                dispatch({ type: AUTH_OK, payload: data });
+                localStorage.setItem(AUTH_URL, JSON.stringify(data));
+            } else {
+                dispatch({ type: AUHT_KO, payload: data });
+            }
         }
     } catch (err) {
         console.log("error in axios auth", err);

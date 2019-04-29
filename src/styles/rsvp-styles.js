@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fifthColor } from "../data/colors.yaml";
+import { fifthColor, white } from "../data/colors.yaml";
 
 import { Form } from "react-bootstrap";
 
@@ -27,24 +27,21 @@ export const Block = styled.div`
     margin-right: auto;
 `;
 
+export const IconImg = styled.img`
+    width: 60px;
+    margin: 0;
+    max-width: 100%;
+    margin-bottom: 40px;
+`;
+
 export const InfoTitle = styled.h2`
     font-family: "Brandon Grotesque";
     font-size: 4vw;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     line-height: 1.2;
-    color: #fff;
+    color: ${white};
     font-weight: 500;
-`;
-
-export const Underline = styled.span`
-    display: block;
-    width: 60px;
-    border-bottom-width: 4px;
-    border-bottom-style: solid;
-    border-bottom-color: #fff;
-    margin-left: auto;
-    margin-right: auto;
 `;
 
 export const LineInput = styled(Form.Control)`
@@ -60,17 +57,8 @@ export const LineInput = styled(Form.Control)`
     width: 100%;
 `;
 
-export const LineLabel =
-    //styled(Form.Label)`
-    styled.label`
-        font-family: "Brandon Grotesque";
-    `;
-
-export const IconImg = styled.img`
-    width: 60px;
-    margin: 0;
-    max-width: 100%;
-    margin-bottom: 40px;
+export const LineLabel = styled.label`
+    font-family: "Brandon Grotesque";
 `;
 
 export const SubTitle = styled.h4`
@@ -80,4 +68,14 @@ export const SubTitle = styled.h4`
     margin-bottom: 1rem;
     margin: 0 0 0.75em;
     line-height: 1.2;
+`;
+
+export const Underline = styled.span`
+    display: block;
+    width: 60px;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: ${white};
+    margin-left: auto;
+    margin-right: auto;
 `;

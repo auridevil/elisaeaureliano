@@ -17,7 +17,7 @@ export class DinnerSection extends React.Component {
                 <SubTitle>{"Palazzo Drago"}</SubTitle>
                 <Details>{"In via Guglielmo Marconi 13, a Verzuolo (CN). Dalle 19 in poi."}</Details>
                 <p>
-                    <DetailButton link={pdragoMap} color={"white"}>
+                    <DetailButton link={pdragoMap} color={"white"} tabIndex={"30"}>
                         {"Visualizza sulla mappa"}
                     </DetailButton>
                 </p>

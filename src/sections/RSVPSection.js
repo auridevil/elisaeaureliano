@@ -44,7 +44,9 @@ export class RSVPSection extends React.Component {
                                 <Row>
                                     <LineLabel>Nomi degli invitati</LineLabel>
                                     <LineInput required name="Nome" id="Nome" aria-label="name" onChange={this.handleInputChange.bind(this)} placeholder={"Inserisci i nomi"} size={"lg"} />
-                                    <Form.Text className="text-muted">{"Inserisci i nomi delle persone per cui confermi la presenza"}</Form.Text>
+                                    <Form.Text className="text-muted" tabIndex={"40"}>
+                                        {"Inserisci i nomi delle persone per cui confermi la presenza"}
+                                    </Form.Text>
                                 </Row>
                             </Form.Group>
 
@@ -52,7 +54,9 @@ export class RSVPSection extends React.Component {
                                 <Row>
                                     <LineLabel>Necessità alimentari e note</LineLabel>
                                     <LineInput placeholder="Inserisci le note" aria-label="notes" name="Note" onChange={this.handleInputChange.bind(this)} />
-                                    <Form.Text className="text-muted">{"Aggiungi eventuali necessità alimentari, allergie o annotazioni"}</Form.Text>
+                                    <Form.Text className="text-muted" tabIndex={"41"}>
+                                        {"Aggiungi eventuali necessità alimentari, allergie o annotazioni"}
+                                    </Form.Text>
                                 </Row>
                             </Form.Group>
 
@@ -60,11 +64,13 @@ export class RSVPSection extends React.Component {
                                 <Row>
                                     <LineLabel>Email</LineLabel>
                                     <LineInput placeholder="Inserisci l'email" type="email" aria-label="email" name="Email" onChange={this.handleInputChange.bind(this)} />
-                                    <Form.Text className="text-muted">{"Lasciaci la tua email"}</Form.Text>
+                                    <Form.Text className="text-muted" tabIndex={"42"}>
+                                        {"Lasciaci la tua email"}
+                                    </Form.Text>
                                 </Row>
                             </Form.Group>
 
-                            <DetailButton variant="primary" type="submit" handler={this.handleSubmit.bind(this)}>
+                            <DetailButton variant="primary" type="submit" handler={this.handleSubmit.bind(this)} tabIndex={43}>
                                 Conferma
                             </DetailButton>
                         </Form>

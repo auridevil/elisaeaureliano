@@ -1,20 +1,17 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby's default starter
+  elisaeaureliano.com
 </h1>
 
-Elisa e Aureliano wedding website (WIP)
+Elisa e Aureliano wedding website
 
 ## 🚀 Quick start
 
     ```sh
-    gatsby develop
+    yarn develop
     ```
 
-## 💫 Deploy
+## Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+    ```sh
+    yarn deploy
+    ```

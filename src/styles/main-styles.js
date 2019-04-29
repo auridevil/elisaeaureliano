@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle, css } from "styled-components";
 
-import { white } from "../data/colors.yaml";
+import { gold, white } from "../data/colors.yaml";
 import { BranGro, SurvFine, SurvDisplay } from "./font-face.js";
 
 /* Globals */
@@ -59,7 +59,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const GoldenButton = styled.a`
-    color: #b18f3a;
+    color: ${gold};
     border: 2px solid #b18f3a;
     border-radius: 0;
     display: inline-block;
@@ -71,17 +71,22 @@ export const GoldenButton = styled.a`
     font-weight: 900;
     transition: color 0.1s linear;
     &:hover {
-        color: #fff;
+        color: ${white};
         cursor: grab;
-        border-color: #b18f3a;
-        background-color: #b18f3a;
+        border-color: ${gold};
+        background-color: ${gold};
         text-decoration: none;
+    }
+    &:not([href]) {
+        &:not([tabindex]) {
+            color: #b18f3a;
+        }
     }
 `;
 
 export const WhiteButton = styled.a`
-    color: #fff;
-    border: 2px solid #fff;
+    color: ${white};
+    border: 2px solid ${white};
     border-radius: 0;
     display: inline-block;
     font-family: "Brandon Grotesque";
@@ -92,23 +97,15 @@ export const WhiteButton = styled.a`
     font-weight: 900;
     transition: color 0.1s linear;
     &:hover {
-        color: #fff;
+        color: ${white};
         cursor: grab;
-        border-color: #b18f3a;
-        background-color: #b18f3a;
+        border-color: ${gold};
+        background-color: ${gold};
         text-decoration: none;
     }
-`;
-
-export const TextureWrapper = styled.div`
-    svg {
-        position: absolute;
-        top: 0px;
-        bottom: 0px;
-        right: 0px;
-        left: 0px;
-        height: 100%;
-        width: 100%;
-        z-index: 1;
+    &:not([href]) {
+        &:not([tabindex]) {
+            color: ${white};
+        }
     }
 `;

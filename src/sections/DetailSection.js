@@ -31,7 +31,9 @@ export class DetailSection extends React.Component {
                         <Description>{"21 Giugno 2019 - 16:30"}</Description>
                         <SubDescription>{"Un venerdì"}</SubDescription>
                         <p>
-                            <DetailButton link={"elisaeaureliano.ics"}>{"Aggiungi al calendario"} </DetailButton>
+                            <DetailButton link={"elisaeaureliano.ics"} tabIndex={"20"}>
+                                {"Aggiungi al calendario"}{" "}
+                            </DetailButton>
                         </p>
                     </InfoBlock>
                     <InfoBlock>
@@ -43,7 +45,9 @@ export class DetailSection extends React.Component {
                         <Description>{"Fossano (CN)"}</Description>
                         <SubDescription>{"Al castello degli acaja"}</SubDescription>
                         <p>
-                            <DetailButton link={castleMap}>{"Visualizza sulla mappa"}</DetailButton>
+                            <DetailButton link={castleMap} tabIndex={"21"}>
+                                {"Visualizza sulla mappa"}
+                            </DetailButton>
                         </p>
                     </InfoBlock>
                 </PaneRow>
