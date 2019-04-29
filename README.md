@@ -1,17 +1,20 @@
 <h1 align="center">
-  elisaeaureliano.com
+  <a href="https://elisaeaureliano.com" target="_blank">elisaeaureliano.com</a>
 </h1>
 
 Elisa e Aureliano wedding website
 
-## 🚀 Quick start
-
-    ```sh
+## Start
+    ```
     yarn develop
     ```
 
 ## Deploy
-
-    ```sh
+    ```
     yarn deploy
+    ```
+    
+## Promote
+    ```
+    yarn prod
     ```
