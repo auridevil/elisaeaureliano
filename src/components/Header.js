@@ -38,7 +38,7 @@ export const Header = () => (
                     </Col>
                     <Col>
                         <Nav.Item className="d-flex align-items-center">
-                            <HeaderVoice href="#rsvp" tabIndex="03">
+                            <HeaderVoice href="#presence" tabIndex="03">
                                 CONFERMA LA PRESENZA
                             </HeaderVoice>{" "}
                         </Nav.Item>

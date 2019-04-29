@@ -7,24 +7,27 @@ export const AUHT_KO = "AUTH_KO";
 const CORS_URL = "https://cors-anywhere.herokuapp.com/";
 const AUTH_URL = "simpleexchanger-7t2g1yqrx.now.sh:443/";
 
+const getItem = k => typeof window !== "undefined" && JSON.parse(window.localStorage.getItem(k));
+const setItem = (k, d) => typeof window !== "undefined" && window.localStorage.setItem(k, JSON.stringify(d));
+
 export const auth = value => async dispatch => {
     dispatch({ type: VALIDATE_AUTH, token: value });
     try {
         /** avoid lot of backend calling - free tier */
-        const localData = JSON.parse(localStorage.getItem(AUTH_URL));
+        const localData = getItem(AUTH_URL);
         if (localData) {
             dispatch({ type: AUTH_OK, payload: localData });
         } else {
             const { data } = await axios.get(`${CORS_URL}${AUTH_URL}?k=${value}`, { crossDomain: true });
             if (data && data.status != 401) {
                 dispatch({ type: AUTH_OK, payload: data });
-                localStorage.setItem(AUTH_URL, JSON.stringify(data));
+                setItem(AUTH_URL, data);
             } else {
                 dispatch({ type: AUHT_KO, payload: data });
             }
         }
     } catch (err) {
-        console.log("error in axios auth", err);
+        if (typeof window !== "undefined") console.log("error in axios auth", err); // ssr gives errors here
         dispatch({ type: AUHT_KO });
     }
 };

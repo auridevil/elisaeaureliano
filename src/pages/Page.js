@@ -29,7 +29,7 @@ class Page extends React.Component {
                 <ScrollableAnchor id="dinner">
                     <DinnerSection />
                 </ScrollableAnchor>
-                <ScrollableAnchor id="rsvp">
+                <ScrollableAnchor id="presence">
                     <RSVPSection authData={authData} rsvp={rsvp} rsvpDone={rsvpDone} />
                 </ScrollableAnchor>
                 <ScrollableAnchor id="present">
