@@ -1,4 +1,6 @@
-<img src="https://raw.githubusercontent.com/auridevil/elisaeaureliano/master/src/images/logo_EA.svg" />
+<svg viewBox="0 0 100 100">
+   <use xlink:href="https://raw.githubusercontent.com/auridevil/elisaeaureliano/master/src/images/logo_EA.svg"></use>
+</svg>
 # <a href="https://elisaeaureliano.com" target="_blank">elisaeaureliano.com</a>
 
 Elisa e Aureliano wedding website
