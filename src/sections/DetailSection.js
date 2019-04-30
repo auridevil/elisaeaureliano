@@ -11,7 +11,7 @@ const castleMap = "https://goo.gl/maps/FeGxYMqCmcp";
 export class DetailSection extends React.Component {
     render() {
         return (
-            <Pane>
+            <Pane id={this.props.id}>
                 <WhoBlock>
                     <TitleSection>
                         <IconImg src={tentIcon} />

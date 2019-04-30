@@ -30,7 +30,7 @@ export class AccessModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
-        this.props.validate("pre-auth");
+        this.props.validate();
     }
 
     componentDidMount() {
@@ -56,11 +56,12 @@ export class AccessModal extends React.Component {
         return (
             <Modal show={open} size={"lg"} centered={true} onHide={() => console.log("insert password before")}>
                 <InputGroup>
+                    {/*
                     <InputGroup.Prepend>
                         <StyledInputText>Inserisci la password</StyledInputText>
-                    </InputGroup.Prepend>
+                    </InputGroup.Prepend> */}
                     <StyledFormControl
-                        placeholder="Qui"
+                        placeholder="Inserisci la password"
                         aria-label="Password"
                         onChange={this.handleChange}
                         ref={i => {

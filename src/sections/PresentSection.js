@@ -6,7 +6,7 @@ import travel from "../images/backpack_b.svg";
 export class PresentSection extends React.Component {
     render() {
         return (
-            <Pane>
+            <Pane id={this.props.id}>
                 <Info>{"Vorremmo poter esaudire il desiderio di far un viaggio insieme tutta la famiglia, saremmo molto felici se vorreste contribuire ad esaudirlo."}</Info>
                 <IconImg src={travel} />
                 <Iban>{"IBAN IT24 G061 7046 32000000 1550 933"}</Iban>

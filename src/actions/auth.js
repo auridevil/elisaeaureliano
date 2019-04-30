@@ -18,7 +18,8 @@ export const auth = value => async dispatch => {
         if (localData) {
             dispatch({ type: AUTH_OK, payload: localData });
         } else {
-            const { data } = await axios.get(`${CORS_URL}${AUTH_URL}?k=${value}`, { crossDomain: true });
+            const url = value && value.length > 0 ? `${CORS_URL}${AUTH_URL}?k=${value}` : `${CORS_URL}${AUTH_URL}${window.location.search}`;
+            const { data } = await axios.get(url, { crossDomain: true });
             if (data && data.status != 401) {
                 dispatch({ type: AUTH_OK, payload: data });
                 setItem(AUTH_URL, data);

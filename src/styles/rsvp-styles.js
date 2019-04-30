@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { fifthColor, white } from "../data/colors.yaml";
-
 import { Form } from "react-bootstrap";
+import styled from "styled-components";
+
+import { fifthColor, white } from "../data/colors.yaml";
 
 export const Pane = styled.section`
     box-sizing: border-box;
@@ -20,7 +20,7 @@ export const Pane = styled.section`
 
 export const Block = styled.div`
     padding-top: 50px;
-    width: 40%;
+    width: 50%;
     font-family: "Brandon Grotesque";
     position: relative;
     margin-left: auto;
@@ -52,8 +52,6 @@ export const LineInput = styled(Form.Control)`
     box-shadow: none;
     border-radius: 0;
     font-family: "Brandon Grotesque";
-    margin-left: auto;
-    margin-right: auto;
     width: 100%;
 `;
 
@@ -76,6 +74,11 @@ export const Underline = styled.span`
     border-bottom-width: 4px;
     border-bottom-style: solid;
     border-bottom-color: ${white};
+    margin-left: auto;
+    margin-right: auto;
+`;
+
+export const Centered = styled.span`
     margin-left: auto;
     margin-right: auto;
 `;

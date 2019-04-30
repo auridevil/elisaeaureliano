@@ -10,7 +10,7 @@ const pdragoInsta = "https://www.instagram.com/palazzo_drago/";
 export class DinnerSection extends React.Component {
     render() {
         return (
-            <Pane>
+            <Pane id={this.props.id}>
                 <InfoTitle>{"Rinfresco"}</InfoTitle>
                 <Underline />
                 <br />

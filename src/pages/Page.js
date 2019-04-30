@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import ScrollableAnchor, { configureAnchors } from "react-scrollable-anchor";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -16,25 +15,15 @@ import { RSVPSection } from "../sections/RSVPSection";
 import { auth } from "../actions/auth";
 import { rsvp } from "../actions/rsvp";
 
-configureAnchors({ scrollDuration: 5 });
-
 class Page extends React.Component {
     renderSubSite() {
         const { authDone, authData, rsvp, rsvpDone } = this.props;
         return authDone ? (
             <Fragment>
-                <ScrollableAnchor id="details">
-                    <DetailSection />
-                </ScrollableAnchor>
-                <ScrollableAnchor id="dinner">
-                    <DinnerSection />
-                </ScrollableAnchor>
-                <ScrollableAnchor id="presence">
-                    <RSVPSection authData={authData} rsvp={rsvp} rsvpDone={rsvpDone} />
-                </ScrollableAnchor>
-                <ScrollableAnchor id="present">
-                    <PresentSection />
-                </ScrollableAnchor>
+                <DetailSection id="details" />
+                <DinnerSection id="dinner" />
+                <RSVPSection authData={authData} rsvp={rsvp} rsvpDone={rsvpDone} id="presence" />
+                <PresentSection id="present" />
                 <FootSection />
             </Fragment>
         ) : (

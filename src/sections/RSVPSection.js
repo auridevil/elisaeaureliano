@@ -3,7 +3,7 @@ import { Form, Row } from "react-bootstrap";
 import isEmail from "validator/lib/isEmail";
 
 import { DetailButton } from "../components/DetailButton";
-import { Block, IconImg, InfoTitle, LineInput, LineLabel, Pane, SubTitle, Underline } from "../styles/rsvp-styles";
+import { Block, Centered, IconImg, InfoTitle, LineInput, LineLabel, Pane, SubTitle, Underline } from "../styles/rsvp-styles";
 import rsvpImage from "../images/rsvp.png";
 
 export class RSVPSection extends React.Component {
@@ -33,47 +33,46 @@ export class RSVPSection extends React.Component {
         const { rsvpDone } = this.props;
 
         return (
-            <Pane>
+            <Pane id={this.props.id}>
                 <InfoTitle>{"Conferma la tua presenza"}</InfoTitle>
                 <IconImg src={rsvpImage} />
                 <Underline />
                 {!rsvpDone ? (
                     <Block>
-                        <Form inline={false}>
-                            <Form.Group className={"float-label-control"}>
-                                <Row>
-                                    <LineLabel>Nomi degli invitati</LineLabel>
-                                    <LineInput required name="Nome" id="Nome" aria-label="name" onChange={this.handleInputChange.bind(this)} placeholder={"Inserisci i nomi"} size={"lg"} />
-                                    <Form.Text className="text-muted" tabIndex={"40"}>
-                                        {"Inserisci i nomi delle persone per cui confermi la presenza"}
-                                    </Form.Text>
-                                </Row>
-                            </Form.Group>
+                        <Form.Group className={"float-label-control"}>
+                            <Row>
+                                <LineLabel>Nomi degli invitati</LineLabel>
+                                <LineInput size="lg" required name="Nome" id="Nome" aria-label="name" onChange={this.handleInputChange.bind(this)} placeholder={"Inserisci i nomi"} size={"lg"} />
+                                <Form.Text className="text-muted" tabIndex={"40"}>
+                                    {"Inserisci i nomi delle persone per cui confermi la presenza"}
+                                </Form.Text>
+                            </Row>
+                        </Form.Group>
 
-                            <Form.Group>
-                                <Row>
-                                    <LineLabel>Necessità alimentari e note</LineLabel>
-                                    <LineInput placeholder="Inserisci le note" aria-label="notes" name="Note" onChange={this.handleInputChange.bind(this)} />
-                                    <Form.Text className="text-muted" tabIndex={"41"}>
-                                        {"Aggiungi eventuali necessità alimentari, allergie o annotazioni"}
-                                    </Form.Text>
-                                </Row>
-                            </Form.Group>
+                        <Form.Group>
+                            <Row>
+                                <LineLabel>Necessità alimentari e note</LineLabel>
+                                <LineInput placeholder="Inserisci le note" aria-label="notes" name="Note" onChange={this.handleInputChange.bind(this)} />
+                                <Form.Text className="text-muted" tabIndex={"41"}>
+                                    {"Aggiungi eventuali necessità alimentari, allergie o annotazioni"}
+                                </Form.Text>
+                            </Row>
+                        </Form.Group>
 
-                            <Form.Group>
-                                <Row>
-                                    <LineLabel>Email</LineLabel>
-                                    <LineInput placeholder="Inserisci l'email" type="email" aria-label="email" name="Email" onChange={this.handleInputChange.bind(this)} />
-                                    <Form.Text className="text-muted" tabIndex={"42"}>
-                                        {"Lasciaci la tua email"}
-                                    </Form.Text>
-                                </Row>
-                            </Form.Group>
-
+                        <Form.Group>
+                            <Row>
+                                <LineLabel>Email</LineLabel>
+                                <LineInput placeholder="Inserisci l'email" type="email" aria-label="email" name="Email" onChange={this.handleInputChange.bind(this)} />
+                                <Form.Text className="text-muted" tabIndex={"42"}>
+                                    {"Lasciaci la tua email"}
+                                </Form.Text>
+                            </Row>
+                        </Form.Group>
+                        <Centered>
                             <DetailButton variant="primary" type="submit" handler={this.handleSubmit.bind(this)} tabIndex={43}>
                                 Conferma
                             </DetailButton>
-                        </Form>
+                        </Centered>
                     </Block>
                 ) : (
                     <SubTitle>{"grazie per la conferma!"}</SubTitle>
